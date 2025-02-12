@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <div class="container-1">
+      <div>{% include 'components/header.html' %}</div>
+      <div class="main">
+        <!-- home -->
+        {% if request.path == '/portfolio/' %}
+        <p>This is home.</p>
+        {% endif %}
+        <!-- home -->
+        <!-- about -->
+        {% if request.path == '/portfolio/about/' %}
+        <p>This is about.</p>
+        {% endif %}
+        <!-- about -->
+        <!-- services -->
+        {% if request.path == '/portfolio/services/' %}
+        <p>This is services.</p>
+        {% endif %}
+        <!-- services -->
+        <!-- contact -->
+        {% if request.path == '/portfolio/contact/' %}
+        <p>This is contact.</p>
+        {% endif %}
+        <!-- contact -->
+      </div>
+    </div>
+  </body>
+</html>

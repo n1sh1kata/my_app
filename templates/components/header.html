@@ -1,0 +1,25 @@
+<div class="wrapper-1">
+  <div class="nav">
+    <a
+      class="nav-btn {% if request.path == '/portfolio/' %}nav-active{% endif %}"
+      href="{% url 'portfolio:portfolio' %}"
+      >Home</a
+    >
+    <a
+      class="nav-btn {% if request.path == '/portfolio/about/' %}nav-active{% endif %}"
+      href="{% url 'portfolio:portfolio/about/' %}"
+      >About</a
+    >
+    <a
+      class="nav-btn {% if request.path == '/portfolio/services/' %}nav-active{% endif %}"
+      href="{% url 'portfolio:portfolio/services/' %}"
+      >Services</a
+    >
+    <a
+      class="nav-btn {% if request.path == '/portfolio/contact/' %}nav-active{% endif %}"
+      href="{% url 'portfolio:portfolio/contact/' %}"
+      >Contact</a
+    >
+  </div>
+  <a class="nav-btn" href="{% url 'portfolio:index' %}">Back</a>
+</div>
