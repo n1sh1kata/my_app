@@ -9,7 +9,8 @@
     <span class="t1">{{ name|upper }}</span>
   </div>
   <div class="body">
-    <a class="main-btn" href="{% url 'portfolio:portfolio' %}">Go to PORTFOLIO</a>
+    <a class="main-btn" href="{% url 'portfolio:portfolio' %}">Go to PORTFOLIO</a><br />
+    <a class="main-btn" href="{% url 'portfolio:dashboard/home/' %}">Go to DASHBOARD</a>
   </div>
 </div>
 {% endblock %}

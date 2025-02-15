@@ -1,0 +1,18 @@
+{% load custom_filters %}
+
+<!-- # Card Component:
+# a. Create a card component to display each dictionary item dynamically.
+# b. Use a for loop in the template to iterate over the data and show each card. -->
+
+<div class="p-4 sm:ml-64">
+    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+            {% for item in data %}
+            <div class="bg-white shadow-md rounded-lg p-4">
+                <h2 class="text-lg font-semibold">{{ item.title }}</h2>
+                <p class="text-2xl font-bold">{{ item.count|format_count }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

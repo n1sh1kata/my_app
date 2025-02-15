@@ -1,0 +1,22 @@
+{% extends "base_1.html" %}
+
+<!-- Extend base.html in the dashboard template. -->
+
+
+{% block title %} Dashboard {% endblock %}
+
+{% block body %}
+<!-- home -->
+{% if request.path == '/dashboard/home/' %}
+{% include 'components/dsh_home.html' %}
+{% endif %}
+<!-- report -->
+{% if request.path == '/dashboard/report/' %}
+{% include 'components/dsh_report.html' %}
+{% endif %}
+<!-- settings -->
+{% if request.path == '/dashboard/settings/' %}
+{% include 'components/dsh_settings.html' %}
+{% endif %}
+
+{% endblock %}
