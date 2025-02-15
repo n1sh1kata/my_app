@@ -6,6 +6,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
     <title>Portfolio</title>
   </head>
   <body>
@@ -24,12 +28,13 @@
         <!-- about -->
         <!-- services -->
         {% if request.path == '/portfolio/services/' %}
-        <p>This is services.</p>
+        <div class="cont-service">{% include 'components/service.html' %}</div>
+
         {% endif %}
         <!-- services -->
         <!-- contact -->
         {% if request.path == '/portfolio/contact/' %}
-        <p>This is contact.</p>
+        <div class="cont-contact">{% include 'components/contact.html' %}</div>
         {% endif %}
         <!-- contact -->
       </div>
