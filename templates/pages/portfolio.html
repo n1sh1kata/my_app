@@ -1,43 +1,32 @@
-{% load static %}
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'styles.css' %}" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <title>Portfolio</title>
-  </head>
-  <body>
-    <div class="container-1">
-      <div>{% include 'components/header.html' %}</div>
-      <div class="main">
-        <!-- home -->
-        {% if request.path == '/portfolio/' %}
-        <div class="cont-home">{% include 'components/home.html' %}</div>
-        {% endif %}
-        <!-- home -->
-        <!-- about -->
-        {% if request.path == '/portfolio/about/' %}
-        <p>This is about.</p>
-        {% endif %}
-        <!-- about -->
-        <!-- services -->
-        {% if request.path == '/portfolio/services/' %}
-        <div class="cont-service">{% include 'components/service.html' %}</div>
+{% block title %} Portfolio {% endblock %}
 
-        {% endif %}
-        <!-- services -->
-        <!-- contact -->
-        {% if request.path == '/portfolio/contact/' %}
-        <div class="cont-contact">{% include 'components/contact.html' %}</div>
-        {% endif %}
-        <!-- contact -->
-      </div>
-    </div>
-  </body>
-</html>
+{%block body %}
+<div class="container-1">
+  <div>{% include 'components/header.html' %}</div>
+  <div class="main">
+    <!-- home -->
+    {% if request.path == '/portfolio/' %}
+    <div class="cont-home">{% include 'components/home.html' %}</div>
+    {% endif %}
+    <!-- home -->
+    <!-- about -->
+    {% if request.path == '/portfolio/about/' %}
+    <div class="cont-about">{% include 'components/about.html' %}</div>
+    {% endif %}
+    <!-- about -->
+    <!-- services -->
+    {% if request.path == '/portfolio/services/' %}
+    <div class="cont-service">{% include 'components/service.html' %}</div>
+
+    {% endif %}
+    <!-- services -->
+    <!-- contact -->
+    {% if request.path == '/portfolio/contact/' %}
+    <div class="cont-contact">{% include 'components/contact.html' %}</div>
+    {% endif %}
+    <!-- contact -->
+  </div>
+</div>
+{% endblock %}
