@@ -22,4 +22,8 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
     path('', include('portfolio.urls', namespace="index")),
+    path('api/', include ([
+        path('user/', include('user.urls', namespace='all')),
+        path('items/', include('items.urls', namespace='items')) 
+    ]))
 ]
