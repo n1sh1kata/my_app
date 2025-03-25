@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.shortcuts import render
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST, require_GET
 
@@ -14,7 +14,7 @@ def all(request):
         {"title": "Orders", "count": 320},
         {"title": "Revenue", "count": "12450"},
         ]
-    return JsonResponse({"message": "Successfully created", "payload": data}, status=200)
+    return HttpResponse({"message": "Successfully created", "payload": data}, status=200)
 
 @csrf_exempt
 @require_GET
